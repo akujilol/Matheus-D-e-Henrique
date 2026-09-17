@@ -7,14 +7,14 @@ export class MatService {
 
 	async listar() {
 		const { rows } = await this.database.query(
-			"SELECT * FROM materias_construcao ORDER BY id_material"
+			"SELECT * FROM materiais_construcao ORDER BY id"
 		);
 		return rows;
 	}
 
 	async buscarPorId(id) {
 		const { rows } = await this.database.query(
-			"SELECT * FROM materias WHERE id_material = $1",
+			"SELECT * FROM materiais_construcao WHERE id = $1",
 			[id]
 		);
 		return rows[0] ?? null;
